@@ -39,7 +39,7 @@ Supports file upload, audio features, and conversation with AI models.
 - `popup.js` – audio access
 - `audio.js` – ElevenLabs integration (TTS/STT)
 - `documents.js` – file management, base64 conversion
-- `content.js` – script for page content and recording
+- `content.js` – script for page content
 - `manifest.json` – Chrome extension configuration
 - `popup.md` – technical documentation
 - `popup.test.js`, `audio.test.js` – unit tests
