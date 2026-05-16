@@ -33,8 +33,10 @@ Supports file upload, audio features, and conversation with AI models.
 - All configuration will be saved for later
 
 ## Files
-- `popup.html` – user interface
-- `popup.js` – UI logic, conversation, audio, API communication
+- `sidebar.html` – user interface
+- `popup.html` – user interface for audio access
+- `sidebar.js` – UI logic, conversation, audio, API communication
+- `popup.js` – audio access
 - `audio.js` – ElevenLabs integration (TTS/STT)
 - `documents.js` – file management, base64 conversion
 - `content.js` – script for page content and recording
