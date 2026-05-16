@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>__MSG_title__</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form name="ask_ai" id="ask_ai">
+      <div class="advanced">
+        <div class="divine">
+          <button class="open_close" id="configure_open" title="__MSG_configure_title__">__MSG_configure__</button> 
+        </div>
+        <div id="configure" class="closed">
+          <div class="radio-field">
+            <label>__MSG_model_provider__</label> 
+            <span>
+              <input type="radio" name="model" id="model_GPT" value="GPT"/>
+              <label for="model_GPT">__MSG_model_provider_GPT__ 
+                <a class="API_key_info" href="https://platform.openai.com/api-keys" target="_blank" title="__MSG_get_GPT_API_key__">i</a>
+              </label> 
+              <input type="radio" name="model" id="model_Gemini" value="Gemini"/>
+              <label for="model_Gemini">__MSG_model_provider_Gemini__ 
+                <a class="API_key_info" href="https://aistudio.google.com/api-keys" target="_blank" title="__MSG_get_Gemini_API_key__">i</a>
+              </label>
+            </span>
+          </div>
+          <div>
+            <label>__MSG_add_api_key__</label> 
+            <input type="text" name="API_key" id="API_key" autocomplete="autocomplete" value=""/>
+          </div>
+          <div>
+            <label>__MSG_model_version__</label> 
+            <select name="model_version" id="model_version" autocomplete="autocomplete"></select>
+          </div>
+          <div title="__MSG_template_description__">
+            <label>__MSG_template__ <label class="floating checkbox"><input type="checkbox" title="__MSG_add_template__" checked="checked" name="add_instruction_template"/> __MSG_add_instruction__</label></label> 
+            <textarea name="template" id="template">__MSG_default_instruction_template__</textarea>
+          </div>
+          <div id="configure_audio">
+              <div class="radio-field">
+                <label for="audio">__MSG_select_audio_provider__:</label> 
+                <span>
+                  <input type="radio" checked name="audio" id="audio_none" value=""/>
+                  <label for="audio_none">__MSG_no_audio__</label> 
+                  <input type="radio" name="audio" id="audio_ElevenLabs" value="ElevenLabs"/>
+                  <label for="audio_ElevenLabs">__MSG_audio_provider_ElevenLabs__ 
+                    <a class="API_key_info" href="https://elevenlabs.io/app/developers/api-keys" target="_blank" title="__MSG_get_ElevenLabs_API_key__">i</a>
+                  </label>
+                </span>
+              </div>
+              <div id="audio_key_section"><label for="audio_key">__MSG_add_audio_api_key__</label> <input type="text" name="audio_key" id="audio_key" autocomplete="autocomplete" value=""/></div>  
+              <div id="audio_voice_section"><label for="audio_voice">__MSG_select_voice__</label><select id="audio_voice" name="audio_voice"></select></div>
+          </div>
+        </div>
+      </div>
+      <div id="response">
+        <div id="audio_auto_play_response_option" class="radio-field"><span><label for="audio_auto_play_response" title="__MSG_autoplay_description__">__MSG_autoplay__</label><input type="checkbox" name="audio_auto_play_response" id="audio_auto_play_response"/></span></div>
+        <div id="answer">
+          <div class="message_role_model">
+            <span class="message_header">__MSG_model_chat_header__</span>
+            <div id="message-7" class="message_role_model">__MSG_hi_ai__</div>
+          </div>
+        </div>
+        <div class="question_conteneir">
+          <textarea title="__MSG_question_title__" name="question" id="question">__MSG_default_question__</textarea>
+          <fieldset> 
+            <div>
+              <button id="record" title="__MSG_record__">__MSG_record_button__</button>
+            </div>
+            <label title="__MSG_add_page_contents_to_context_title__"><input type="checkbox" checked="checked" name="add_page_contents"/>__MSG_add_page_contents_to_context__</label>
+            <div class="file">
+              <input type="file" id="new-file" placeholder="__MSG_file_name_defaut__">
+              <label for="new-file">__MSG_file_name_defaut__</label>
+            </div>
+            <b id="timer"></b> 
+            <button id="ask" title="__MSG_send_question_title__">__MSG_send_question__</button> 
+          </fieldset>
+        </div>
+        <div class="radio-field" style="display:none"><label>__MSG_display__:</label> <span><input type="radio" name="response_display" id="response_display_conversation" value="conversation" checked="checked"/><label for="response_display_conversation">__MSG_display_conversation__</label> <input type="radio" name="response_display" id="response_display_message" value="message"/><label for="response_display_message">__MSG_display_message__</label></span></div>
+      </div>
+      <div>
+        <button id="files_open" class="open_close" title="__MSG_manage_files_title__">__MSG_manage_files__</button>
+        <div id="files-list"  class="closed files-list"></div>
+      </div>
+      <div id="ask_the_question">
+        <label>
+          <select id="select_configuration_template" name="select_configuration_template"></select>
+          <button id="remove_config_template" title="__MSG_remove_configuration_template__">__MSG_remove_template__</button>
+          <button id="create_config_template" title="__MSG_save_as_configuration_template__">__MSG_save_template__</button>
+        </label>
+      </div>
+    </form>
+    <script defer src="replace_lang.js"></script>
+    <script defer src="documents.js"></script>
+    <script defer src="audio.js"></script>
+    <script defer src="sidebar.js"></script>
+  </body>
+</html>

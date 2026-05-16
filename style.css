@@ -1,0 +1,352 @@
+html{
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: Arial, sans-serif;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+  background: #202020;
+  color: #dcdcdc;
+}
+.popup{
+  text-align: center;
+}
+button:hover, a:hover, input[type=file] + label:hover{
+  background-color: rgba(225,225,225,0.1);
+}
+#ask_ai{
+  height:100%;
+  display: grid;
+  padding: 10px;
+  box-sizing: border-box;
+  grid-template-rows: min-content auto min-content  min-content;
+  row-gap: 5px;
+}
+#ask_the_question{
+  position: relative;
+}
+#ask_the_question > label{
+  display: grid;
+  grid-template-columns: auto max-content max-content;
+  column-gap: 0.5em;
+}
+
+.question_conteneir{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto min-content;
+  margin: 1em 1.2em 0.3em 0.3em;
+  padding:0em 0.2em 0.4em;
+  border-style: groove;
+  border-color: #606060;
+  border-width: 0.5px;
+  border-radius: 0.3em 0.3em 0.3em 0em;
+}
+.question_conteneir textarea{
+  border:none
+}
+
+.question_conteneir > fieldset{
+  margin-top:0px;
+  display: grid;
+  grid-column-gap: 1em;
+  grid-template-columns: max-content max-content max-content auto max-content;
+  padding: 0px 3px 0px 0px;
+  border: none;
+}
+.question_conteneir label{
+  padding-top: 0.3em;
+}
+.question_conteneir fieldset > label{
+  display: grid;
+  grid-template-columns: min-content auto;
+  margin-top: 0px;
+  padding-top: 0.1em;
+  cursor: pointer;
+}
+.download-conversation{
+  float:right;
+  padding: 0.1em 0.5em;
+}
+.download-conversation:hover{
+  background-color:rgba(0, 0, 0, 0.1)
+}
+.question_conteneir label label input{
+    height: 1em;
+    margin-right: 4px;
+}
+input[type="text"], textarea, select {
+  background: #161616;
+  color: #00a67d;
+  border-style: groove;
+  border-color: #606060;
+  border-width: 0.5px;
+  margin: 3px 0px;
+  padding: 5px;
+  overflow: hidden;
+}
+textarea{
+  resize: vertical;
+}
+label a{border:1px solid #00a67d}
+button, a, input[type="file"] + label {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 1em;
+  padding:0.1em 0.5em;
+  font-size: inherit;
+}
+label, input[type="text"], textarea, select {
+  display: block;
+  min-width:100%;
+  box-sizing: border-box;
+}
+.radio-field label{
+  display: inline;
+  min-width: 0px;
+  margin-top: 0px;
+}
+label{
+  margin-top: 10px;
+}
+label, button{
+  font-weight: bold;
+  color: #00a67d;
+}
+.error, .red {
+  color: red;
+}
+input.hidden + label, .hidden{
+  display: none !important;
+}
+.closed {
+  display: none!important;
+}
+.open {
+  padding-top:5px;
+}
+button svg {
+  width: 16px;
+  height: 16px;
+  stroke: #1afc1a; /* Twój neonowy zielony */
+  vertical-align: middle;
+}
+#response {
+  font-size: 1.2em;
+  background: #161616;
+  border-color: #606060;
+  color: #00a67d;
+  border-style: groove;
+  border-width: 0.5px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto min-content;
+  overflow-y: hidden;
+  padding-right: 0px;
+}
+.audio-on #response {
+  grid-template-rows: 1.5em auto min-content;
+}
+/* Stylizacja dla kontenera z historią */
+#answer::-webkit-scrollbar {
+  width: 3px; /* Cienki jak włos */
+}
+
+#answer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Prawie niewidoczne tło */
+  border-radius: 10px;
+}
+
+#answer::-webkit-scrollbar-thumb {
+  background: #606060; /* Twój neonowy zielony, ale dyskretny */
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#answer::-webkit-scrollbar-thumb:hover {
+  background: #606060; /* Mocniejszy przy najechaniu */
+}
+#answer {
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+#answer iframe{
+  width:100%;
+}
+#answer > div{
+  margin: 1em 0.3em;
+  padding:0.5em;
+  border-style: groove;
+  border-color: #606060;
+  border-width: 0.5px;
+  border-radius: 0.3em;
+}
+#answer > div.message_role_user{
+  margin-right: 1em;
+  border-radius: 0.3em 0.3em 0.3em 0em;
+  clear: both;
+}
+#timer{
+  padding-top: 0.1em;
+}
+#answer > div.message_role_model{
+  color: #161616;
+  background-color: #00a67d;
+  margin-left: 1em;
+  border-radius: 0.3em 0em 0.3em 0.3em;
+}
+#answer > div.message_role_model > div.message_role_model{
+  clear: both;
+}
+#answer > div.message_role_model .message_header > button:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#answer > div.message_role_model button{
+  color:black
+}
+#answer > div.message_role_model > div > p:first-child{
+  text-indent: 0px;
+  display: -webkit-inline-box;
+}
+#answer .message_header{
+  display:block;
+  text-transform: capitalize;
+  float: left;
+  font-weight: bold;
+}
+#answer .message_header a{
+  color:inherit;
+  margin: 0px 0px 0px 0.6em;
+  padding: 0px;
+}
+#answer .message_header::after{
+  content: ":";
+  margin-right: 0.5em;
+}
+#answer .message_header > button{
+  margin: -0.2em 0em;
+  height: 1.4em;
+  line-height: 0.6em;
+}
+.audioPlayer{
+  width:225px;
+  display: inline-block !important;
+  height: 1em;
+  margin-left: 6px;
+  position: relative;
+  top: 2px;
+}
+.open_close{
+  float: right;
+  margin-top: 0px;
+  margin-left: 0px;
+  border-radius: 2em;
+  border: none;
+  background: transparent;
+}
+select#select_configuration_template{
+  min-width:auto;
+  width: 17em;
+  position: relative;
+  z-index:1
+}
+label.floating{
+  min-width: auto;
+  float: right;
+  width: 60%;
+  margin-top: 6px;
+}
+label.floating.checkbox{
+  margin-top: -5px;
+  width: 42%;
+}
+label.floating button{
+  float:right;
+  padding: 5.8px;
+  margin-top: 3px;
+}
+.files-list{
+  clear:both;
+  margin: 10px 0px;
+  display: grid;
+  position: relative;
+  grid-template-columns:min-content auto max-content;
+}
+
+.closed.files-list{
+  display: grid !important;
+  grid-template-columns: min-content max-content;
+  clear: none;
+  margin:0px;
+}
+.files-list input[type="text"]{
+  background: transparent;
+  border: none;
+  margin: -3px;
+}
+.closed.files-list > div{
+  display: none
+}
+.closed.files-list > div.selected{
+  display: block
+}
+.closed.files-list > div.file{
+  display: block;
+  position: absolute;
+  bottom: 100%;
+}
+.closed.files-list > div.selected + div{
+  display: block
+}
+.files-list > div{
+  padding: 0.5ex;
+}
+.files-list > div > input[type=text]{
+  min-width:auto;
+  width: 100%;
+}
+.files-list > div > button{
+  padding: 0em 0.4em 0.1em;
+  margin: 0.1em;
+  width: 1.4em;
+  float: left;
+  font-size: 1em;
+  border-radius: 1em;
+}
+.files-list .file > div > label{
+  margin-left: 0.4em;
+}
+input[type=file]{
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+input[type=file] + label, input[type="checkbox"], input[type="checkbox"] + label, input[type="radio"], input[type="radio"] + label{
+  cursor: pointer;
+  margin-top:0px;
+}
+a{
+  display: inline-block;
+  font-weight: bold;
+  color: inherit;
+  min-width: 1.3em;
+  margin: 0.2em;
+  border-radius: 1em;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.1em;
+}
+input:focus, textarea:focus, select:focus{
+  z-index: 2;
+  outline: none;
+}
+input:active{
+  outline: none;
+}
