@@ -1,9 +1,11 @@
 # AI HR toolbox Chrome Extension
 
 ## Description
-Chrome extension for searching jobs, working with AI models (OpenAI, Gemini, ElevenLabs) and document management.\n
+Chrome extension for searching jobs, working with AI models (OpenAI, Gemini, ElevenLabs) and document management.
+
 Allows user to ask AI for their chance vs job description and needed résumé adjustments.
-Supports file upload, audio features, and conversation with AI models.\n
+Supports file upload, audio features, and conversation with AI models.
+
 It also serves as a helpful AI assistant for working with content in the browser and on the currently active page. It can summarize articles, help draft email replies, and support users in analyzing and processing content available in the current browser tab.
 
 ## Features
