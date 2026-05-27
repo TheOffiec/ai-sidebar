@@ -1,41 +1,67 @@
 # AI HR toolbox Chrome Extension
 
+
 ## Description
-Chrome extension for searching jobs, working with AI models (OpenAI, Gemini, ElevenLabs) and document management.
+AI HR Toolbox is a Chrome extension designed to support users in job offer analysis, CV optimization, and working with web content using AI models.
+It enables users to evaluate how well their CV matches a job offer, compare their experience with job requirements, and receive suggestions for improving application documents.
+The extension also allows users to upload and manage files, interact with AI models (OpenAI, Gemini), and use audio features (ElevenLabs).
+It also works as a practical AI assistant in the browser — capable of analyzing content from the currently active page, summarizing articles, helping draft email replies, and supporting users in analyzing and processing information available in the current browser tab.
+The extension works directly in the browser, with local configuration and file storage on the client side.
 
-Allows user to ask AI for their chance vs job description and needed résumé adjustments.
-Supports file upload, audio features, and conversation with AI models.
+## Use Cases
+- AI-powered job offer analysis
+- CV match evaluation against job requirements
+- Suggestions for improving application documents
+- Analysis of content from the active browser tab (e.g. job offers, articles, messages)
+- Working with uploaded files and current webpage content in a shared AI context
+- Article summarization
+- AI-assisted email reply drafting
+- Support for multiple AI providers (OpenAI, Gemini, ElevenLabs)
+- Voice interaction with AI (speech-to-text and text-to-speech)
+- Conversation history with downloadable responses
+- API key and AI model configuration
 
-It also serves as a helpful AI assistant for working with content in the browser and on the currently active page. It can summarize articles, help draft email replies, and support users in analyzing and processing content available in the current browser tab.
 
-## Features
-- Upload and manage files (IndexedDB storage)
-- Integrate with OpenAI, Gemini, ElevenLabs APIs
-- Text-to-Speech and Speech-to-Text (audio) with ElevenLabs
-- Conversation and message view
-- API key and parameter configuration
+## Quick Start
+1. Install and pin the extension to the Chrome toolbar for quick access.
+2. If you previously used **AI Toolbox 1.0**, disable it to avoid conflicts.
+3. Refresh the current webpage if the extension was freshly installed.
+4. Open the extension.
+5. Select your preferred AI provider:
+   - **Gemini** (recommended for free-tier usage)
+   - **OpenAI**
+6. Add your API key.
+   Click the **(i)** icon next to the selected provider to open the API setup page.
 
-## Installation
-1. Clone the repository or copy files to a directory.
-2. In Chrome, go to `chrome://extensions/`.
-3. Enable developer mode.
-4. Click "Load unpacked" and select the project folder.
+   For Gemini:
+   - create an account
+   - generate a free API key
+
+7. (Optional) Configure **ElevenLabs** for voice features:
+   - add your API key
+   - select your preferred voice
+   - allow microphone access if using voice input
+
+8. Select your preferred AI model version.
+9. (Optional) Customize the instruction template.
+10. Upload a PDF document you want to work with (e.g. your résumé / CV) and select it for the AI context.
+11. Open a webpage you want to analyze (e.g. a job offer, article, or email content).
+12. Start interacting with the AI assistant.
+
+---
 
 ## Usage
-- Disable AI toolbox 1.0 if present
-- Refresh the job offer page if the extenssion was freshly installed
-- Open the extension popup
-- Mark preferred AI provider ( recommending Gemini )
-- Configure API keys ( you can use links under the (i) icon following the provider to generate them )
-- Select version and inspect the template
-- If needed, select audio provider and its API key, then select preferred voice
-- Upload files and manage them in the UI, select files to be included in the conversation
-- Type your question or record it with a microphone
-- AI answers will appear in the conversation window, each with a download option
-- Answers can be played as audio if the audio provider is configured
-- All configuration will be saved for later
+- Open the extension while browsing any webpage
+- Use the current webpage content as AI context
+- Work with your uploaded PDF together with webpage content
+- Type your question or use microphone input
+- Continue the conversation in the AI chat panel
+- Download generated responses if needed
+- Listen to responses using audio playback (if voice features are configured)
+- Change AI provider, model, or template settings at any time
+- Your configuration and uploaded files are stored locally in the browser for future use
 
-## Files
+## Project Structure
 - `sidebar.html` – user interface
 - `popup.html` – user interface for audio access
 - `sidebar.js` – UI logic, conversation, audio, API communication
@@ -60,5 +86,5 @@ npx jest audio.test.js
 - OpenAI/Gemini/ElevenLabs API key
 - Node.js (for running tests)
 
-## Author
-HRchromeAI Chrome Extension Project
+## Maintained by
+HRchromeAI Team
